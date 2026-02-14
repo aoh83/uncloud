@@ -1,9 +1,11 @@
-package monster.scalable.uncloud.domain.kafka;
+package monster.scalable.uncloud.domain.kafka.persistence;
 
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import monster.scalable.uncloud.domain.kafka.persistence.model.KafkaTopic;
 
 /**
  * Spring Data JPA Repository for managing Kafka topics.

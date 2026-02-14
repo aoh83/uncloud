@@ -10,17 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
 
+import monster.scalable.uncloud.domain.kafka.persistence.KafkaTopicRepository;
+import monster.scalable.uncloud.domain.kafka.persistence.model.KafkaTopic;
+
 /**
  * JPA integration tests for KafkaTopicRepository using PostgreSQL testcontainer.
  */
 @DataJpaTest
-// @Import(TestcontainersConfiguration.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class KafkaTopicRepositoryTest {
     
     @Autowired
     private KafkaTopicRepository topicRepository;
-    
+
     @BeforeEach
     void setUp() {
         topicRepository.deleteAll();
@@ -33,6 +35,6 @@ class KafkaTopicRepositoryTest {
 
         Optional<KafkaTopic> foundTopic = topicRepository.findByName("test-topic");
         assertThat(foundTopic).isPresent();
-        assertThat(foundTopic.get().getName()).isEqualTo("test-topic");
+        assertThat(foundTopic.get().name()).isEqualTo("test-topic");
     }
 }
