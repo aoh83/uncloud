@@ -1,3 +1,18 @@
 spring:
   application:
     name: uncloud
+  datasource:
+    url: jdbc:postgresql://localhost:5432/uncloud
+    username: spring
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true

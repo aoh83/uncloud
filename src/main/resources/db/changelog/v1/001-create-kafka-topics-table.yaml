@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-kafka-topics-table
+      author: system
+      changes:
+        - createTable:
+            tableName: kafka_topics
+            columns:
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: partitions
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: replication_factor
+                  type: SMALLINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: retention_ms
+                  type: BIGINT
+                  constraints:
+                    nullable: false

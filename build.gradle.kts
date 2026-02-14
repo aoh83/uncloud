@@ -33,11 +33,23 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+	// Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+	implementation("org.springframework.boot:spring-boot-starter-jdbc:4.0.2")
+	// Source: https://mvnrepository.com/artifact/org.postgresql/postgresql
+	implementation("org.postgresql:postgresql:42.7.10")
+
+
+
 	testImplementation("org.springframework.boot:spring-boot-starter-liquibase-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-validation-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
 	testImplementation("org.testcontainers:testcontainers-junit-jupiter")
+	// Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-test-autoconfigure
+	testImplementation("org.springframework.boot:spring-boot-test-autoconfigure:4.0.2")
+	// Source: https://mvnrepository.com/artifact/com.h2database/h2
+	testImplementation("com.h2database:h2:2.4.240")
+	testImplementation("org.testcontainers:testcontainers-postgresql:2.0.2")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
